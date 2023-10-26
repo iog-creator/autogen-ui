@@ -47,8 +47,7 @@ class Manager(object):
         messages = user_proxy.chat_messages[assistant]
         logged_history = autogen.ChatCompletion.logged_history
         autogen.ChatCompletion.stop_logging()
-        response = {
+        return {
             "messages": messages[1:],
-            "usage": parse_token_usage(logged_history)
+            "usage": parse_token_usage(logged_history),
         }
-        return response

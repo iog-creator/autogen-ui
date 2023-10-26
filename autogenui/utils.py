@@ -12,10 +12,8 @@ def parse_token_usage(logged_history: Dict):
         all_cost += curr_usage["cost"]
         all_tokens += curr_usage["usage"]["total_tokens"]
         all_usage.append(curr_usage)
-    usage = {
+    return {
         "total_cost": all_cost,
         "total_tokens": all_tokens,
-        "usage": all_usage
+        "usage": all_usage,
     }
-
-    return usage
